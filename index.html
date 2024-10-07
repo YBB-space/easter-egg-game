@@ -1,0 +1,1264 @@
+<!--
+
+⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠛⠻⣿⣿⠿⠛⠛⠙⠛⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⢀⣀⣀⡀⠀⠈⢄⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠏⠀⠀⠀⠔⠉⠁⠀⠀⠈⠉⠓⢼⡤⠔⠒⠀⠐⠒⠢⠌⠿⢿⣿⣿⣿⣿
+⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⢀⠤⣒⠶⠤⠭⠭⢝⡢⣄⢤⣄⣒⡶⠶⣶⣢⡝⢿⣿⣿
+⡿⠋⠁⠀⠀⠀⠀⣀⠲⠮⢕⣽⠖⢩⠉⠙⣷⣶⣮⡍⢉⣴⠆⣭⢉⠑⣶⣮⣅⢻⣿
+⠀⠀⠀⠀⠀⠀⠀⠉⠒⠒⠻⣿⣄⠤⠘⢃⣿⣿⡿⠫⣿⣿⣄⠤⠘⢃⣿⣿⠿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠤⠭⣥⣀⣉⡩⡥⠴⠃⠀⠈⠉⠁⠈⠉⠁⣴⣾⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠔⠊⠀⠀⠀⠓⠲⡤⠤⠖⠐⢿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⢸⣿⡻⢷⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣘⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠠⡀⠀⠙⢿⣷⣽⣽⣛⣟⣻⠷⠶⢶⣦⣤⣤⣤⣤⣶⠾⠟⣯⣿⣿
+⠀⠀⠀⠀⠀⠀⠉⠂⠀⠀⠀⠈⠉⠙⠛⠻⠿⠿⠿⠿⠶⠶⠶⠶⠾⣿⣟⣿⣿⣿
+⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣶⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+
+HANWOOL_index_v1
+created by YBB
+-->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deogle - 더나은 덕인생활</title>
+    <style>
+        /* 햄버거 메뉴 기본 스타일 */
+        .nav-toggle {
+            display: none; /* 기본적으로 숨김 */
+            font-size: 2em;
+            color: #ffffff;
+        }
+
+        /* 반응형 디자인을 위한 미디어 쿼리 */
+        @media screen and (max-width: 768px) {
+            .typing-animation {
+                display: none!important; /* 모바일에서는 타이핑 애니메이션 숨기기 */
+            }
+            img {
+                max-width: 80%!important; /* 이미지가 화면 너비를 넘지 않도록 제한 */
+                height: auto!important; /* 이미지의 비율을 유지하면서 높이 조정 */
+                display: block!important; /* 이미지를 블록 요소로 변환 */
+                margin-left: auto!important; /* 왼쪽 여백 자동 */
+                margin-right: auto!important; /* 오른쪽 여백 자동 */
+            }
+            .nav-links {
+                display: none !important; /* !important를 사용해 우선순위 높이기 */
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: left;
+            }
+            header {
+                padding: 10px 0;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center; /* 모바일에서 메뉴를 가운데 정렬 */
+            }
+            .logo {
+                display: none;
+            }
+            .nav-links.active {
+                display: flex !important; /* 햄버거 메뉴를 클릭했을 때만 메뉴가 나타남 */
+            }
+            .nav-toggle {
+                display: block; /* 모바일에서 햄버거 메뉴 아이콘 표시 */
+                cursor: pointer;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            .features .feature h2,
+            .pricing-plan h2,
+            .contact h2 {
+                font-size: 1.3em;
+            }
+            .features .feature p,
+            .pricing-plan p,
+            .contact p {
+                font-size: 0.9em;
+            }
+            .services h2,
+            .services p {
+                font-size: 1.2em!important; /* 서비스 섹션의 텍스트 크기를 줄임 */
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center; /* 텍스트를 가운데 정렬 */
+            }
+            .services h2 {
+                font-size: 1.5em; /* 제목의 크기를 조금 더 키움 */
+            }
+        }
+
+        @font-face {
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 기본 헤더 스타일 */
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            position: fixed; /* 스크롤 시 헤더 고정 */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: padding 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            transition: justify-content 0.5s ease;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            color: #01e188;
+            font-weight: bold;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            transition: justify-content 0.5s ease;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #007aff;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* 스크롤 시 헤더 스타일 */
+        header.scrolled {
+            opacity: 0.8;
+            padding: 10px 0;
+        }
+
+        header.scrolled .logo {
+            display: none;
+            pointer-events: none; /* 로고가 클릭되지 않도록 */
+        }
+
+        header.scrolled nav {
+            justify-content: center; /* 메뉴 가운데 정렬 */
+        }
+
+        body {
+            margin: 0;
+            color: #e1e1e1;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: url('https://github.com/user-attachments/assets/9b66df89-fa97-4d21-9bd4-2df0698937f1') no-repeat center center fixed; /* 고정된 배경 이미지 */
+            background-size: cover; /* 배경 이미지 크기 조정 */
+            font-family: LINESeedKR-bd;
+        }
+
+        .hero {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.819), rgba(0, 0, 0, 0.258)); /* 히어로 배경을 그라디언트로 설정 */
+            height: 100vh; /* 화면 전체 높이 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            opacity: 1; /* opacity를 1로 설정하여 보이게 함 */
+            animation: fadeInUp 1s 0.5s forwards;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007aff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+            border: 2px solid #007aff;
+        }
+
+        .cta-button:hover {
+            background-color: #0051a2;
+            transform: scale(1.05);
+        }
+
+        /* 기능 섹션 스타일 */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 1s forwards;
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 300px;
+            margin: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+            background: #292929;
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 기본 그림자 */
+        }
+
+        .feature:hover {
+            transform: translateY(-10px) scale(1.05); /* 입체 효과 */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 확대 */
+        }
+
+
+        .feature:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+
+        .feature:nth-child(2) {
+            animation-delay: 1.4s;
+        }
+
+        .feature:nth-child(3) {
+            animation-delay: 1.6s;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            color: #007aff;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .feature h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 15px;
+        }
+
+
+        /* 추가 내용 섹션 스타일 */
+        .additional-content {
+            border-radius: 15px;
+            background: #292929;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 1.8s forwards;
+        }
+
+        .additional-content h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .additional-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        /* 개발 연혁 */
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 2s forwards;
+            
+        }
+
+        .pricing-plan {
+            border-radius: 15px;
+            background: #292929;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 300px;
+            margin: 20px;
+            flex: 1;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+
+        .pricing-plan:hover {
+            transform: scale(1.05);
+            transform: translateY(-10px) scale(1.05); /* 입체 효과 */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 확대 */
+        }
+
+        .pricing-plan:nth-child(1) {
+            animation-delay: 2.2s;
+        }
+
+        .pricing-plan:nth-child(2) {
+            animation-delay: 2.4s;
+        }
+
+        .pricing-plan h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .pricing-plan p {
+            font-size: 1.2em;
+            color: #007aff; /* 애플 블루 */
+            margin: 10px 0;
+        }
+
+        .pricing-plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1em;
+            color: #ffffff;
+        }
+
+        .pricing-plan ul li {
+            margin-bottom: 10px;
+        }
+
+        /* 연락처 섹션 스타일 */
+        .contact {
+            background: #292929;
+            border-radius: 15px;
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 3s forwards;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        .contact button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007aff; /* 애플 블루 */
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #0051a2; /* 더 다크 블루 */
+        }
+
+        /* messagpt 색션 */
+        .donor-list {
+            border-radius: 15px;
+            background: #292929;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 3.2s forwards;
+        }
+
+        .donor-list h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .donor-list p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .donor-list button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007aff; /* 애플 블루 */
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .donor-list button:hover {
+            background-color: #0051a2; /* 더 다크 블루 */
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            background: #111111;
+            color: #f1f1f1;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #007aff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0051a2;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #333;
+            margin: 0 15px;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .meal-info {
+            font-size: 1em;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 기본 그림자 */
+            backdrop-filter: blur(10px);
+        }
+
+        .meal-info h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 0 0 10px;
+            color: #007aff;
+        }
+
+        .meal-info div {
+            font-size: 1em;
+            color: #ffffff;
+            margin: 5px 0;
+        }
+
+        /* 로그인 모달 창 스타일 */
+        .modal-login {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .modal-content-login {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s forwards;
+        }
+
+        .modal-close-login {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-close-login:hover {
+            color: #007aff;
+        }
+
+        .modal-content-login h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #007aff;
+        }
+
+        .modal-content-login input[type="text"],
+        .modal-content-login input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .modal-content-login button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007aff;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content-login button:hover {
+            background-color: #0051a2;
+        }
+
+        .modal-content-login .forgot-password {
+            display: block;
+            margin-top: 15px;
+            color: #007aff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .modal-content-login .forgot-password:hover {
+            color: #0051a2;
+        }
+
+        .modal-content-login .sign-up{
+            display: block;
+            margin-top: 15px;
+            color: #007aff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .modal-content-login .sign-up:hover {
+            color: #0051a2;
+        }
+
+        .about img, .intro img, .services img, .portfolio img, .contact img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .about p, .intro p, .services p, .portfolio p, .contact p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 로켓 메이킹 섹션 스타일 */
+        .services {
+            padding: 20px;
+            background: #292929;
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, transparent 100%);
+            z-index: 0;
+        }
+
+        .services .rocket-img {
+            width: 300px;
+            margin: 50px auto;
+            display: block;
+            z-index: 1;
+            animation: rocketAnimation 10s infinite;
+        }
+
+        .services h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            z-index: 1;
+            color: #01e188;
+            position: relative;
+        }
+
+        .services p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* 글 작성 섹션 스타일 */
+        .write-post {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            padding: 60px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 800px;
+            animation: fadeInUp 1s forwards;
+        }
+
+        .write-post-container {
+            text-align: center;
+        }
+
+        .write-post h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #01e188;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .write-post-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .post-title {
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .post-title:focus {
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+        }
+
+        .post-content {
+            padding: 15px;
+            height: 200px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            resize: none;
+        }
+
+        .post-content:focus {
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+        }
+
+        .submit-button {
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #007aff;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            border: 2px solid #007aff;
+            background-color: #0051a2;
+            transform: scale(1.05);
+        }
+        
+        /* 애니메이션 효과 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .modal {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #292929;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-close:hover {
+            color: #007aff; /* 애플 블루 */
+        }
+
+        .rotating-gradient {
+            font-size: 1.8em;
+            font-weight: bold;
+            background: linear-gradient(20deg, #007bff, #de03cc, #03de12);
+            background-size: 900%; /* 애니메이션 범위를 넓게 설정 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: rotateGradient 7s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* 타이핑 애니메이션 */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 40%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        .typing-animation {
+            font-size: 2em;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            visibility: hidden; /* 처음엔 숨김 */
+        }
+
+        .typing-animation.visible {
+            visibility: visible;
+            animation: typing 1s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        /* 블러 해제 애니메이션 */
+        .blur-effect {
+            filter: blur(10px);
+            transition: filter 3s ease;
+        }
+
+        .blur-effect.visible {
+            filter: blur(0);
+        }
+        #services .section-title {
+            flex: 1;
+        }
+
+        #services img {
+            max-width: 300px;
+            margin-left: 20px;
+        }
+        iframe {
+            z-index: 999;
+            position: relative;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <nav>
+            <div class="nav-toggle">&#9776;</div> <!-- 햄버거 메뉴 아이콘 -->
+            <img src="https://github.com/user-attachments/assets/29627c29-e49e-43e8-a4ce-59945be6a0b0" alt="HANWOOL" class="logo" style="height: 50px;"/> <!-- 로고 이미지 -->
+            <ul class="nav-links"> <!-- 네비게이션 링크들 -->
+                <li><a href="#hero" class="scroll-link">HOME</a></li>
+                <li><a href="#services" class="scroll-link">Technology</a></li>
+                <li><a href="#features" class="scroll-link">Rocket</a></li>
+                <li><a href="#download" class="scroll-link">다운로드 센터</a></li>
+                <li><a href="#contact" class="scroll-link">문의</a></li>
+                <li><a href="/shop" class="scroll-link">shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>
+                <br>
+                <img src="https://github.com/user-attachments/assets/19495e9f-39f7-4b0d-a24f-5d2f151ce59f" alt="HANWOOL" class="logo" style="height: 90px;"/> <br>
+                <span style="font-size: 40px !important;">우주를 향한 작은 발자국</span>
+            </h1>
+            <a href="https://www.youtube.com/@HANWOOL_aerospace" class="cta-button">유튜브 바로가기</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <br><br><br>
+        <h2 style="margin-left: 6.5%;" class="section-title typing-animation">
+            <span style="background: linear-gradient(to right, #00e6b0,#c2dfff); color: transparent; -webkit-background-clip: text;">
+                Flight.Control.Module<br><span style="color: white;"></span>
+            </span>
+        </h2>
+        <img src="https://github.com/user-attachments/assets/2b8dc211-0316-4f0b-9b16-e1ebd33146d8" alt="FCM v3" style="max-width: 300px; margin-left: 6.5%;">
+        <p style="margin-left: 5%;"><span style="color: #01e188;">Avionics</span>는 항공기의 운영과 성능을 좌우하는 핵심 요소입니다.<br>이를 효과적으로 제어하려면 정교하게 설계된 컴퓨터 시스템이나 모듈이 필수적입니다.<br><span style="color: #014fe1;">HANWOOL</span>은 이 중요한 역할을 수행하는 PCB(Printed Circuit Board)를 직접 설계하여,<br>항공 전자 장비의 성능을 최적화하고 신뢰성을 높였습니다.</span><br><br><br><br></p>
+        
+        <h2 style="text-align: right; margin-right: 6.5%; color: #ffffff;">혁신에 더 나아가는<br><span style="color:#de03cc">P.E.E.S</span></h2>
+        <iframe width="448" height="252" src="https://www.youtube.com/embed/gQWJyuEhN3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="float: right; margin-right: 6.5%; margin-bottom: 20px; border-radius: 10px;"></iframe>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="text-align: right; margin-right: 5%;">HANWOOL은 기존의 화약식보다 <span style="color: #01e188;">안전</span>하고 <span style="color: #01e188;">친환경</span>적인 비화약식<br>전자 낙하산 사출 시스템(P.E.E.S, Parachute Electric Eject System)을 성공적으로 개발했습니다. P.E.E.S는 추후 재활용이 가능하다는 장점이 있으며, 기존 시스템에 비해 훨씬 안전합니다.<br><br>이 시스템은 개발 난이도가 매우 높음에도 불구하고<br>HANWOOL은 <span style="color: #e10153;">3년</span>간의 집중적인 개발과 여러 차례의 테스트를 거쳐 안정성을 확보했습니다.<br><br><br><br><br><br></p>
+        
+        <h2 style="margin-left: 6.5%; color: #ffffff;">비행 제어의 핵심,<br><span style="color: #007aff;">Flight.Control.Program</span></h2>
+        <img src="https://github.com/user-attachments/assets/40f19561-6692-486c-9f37-4c1f5f2811bc" alt="Flight Control Program" style="max-width: 400px; margin-left: 6.5%;">
+        <p style="margin-left: 5%;">FCP(Flight Control Program)은 기체에서 수집한 다양한 센서 데이터를 실시간으로 분석하여<br>사용자에게 직관적인 <span style="color: #00e6b0;">GUI</span>로 제공하는 비행 제어 프로그램입니다.<br>이를 통해 기체의 비행을 보다 효율적으로 관제하고 제어할 수 있도록 설계되었습니다.<br><br>기존의 비행 제어 프로그램과는 달리, FCP는 깔끔하고 사용하기 쉬운 인터페이스를 제공하여<br>사용자 편의성을 크게 향상시킵니다.<br><br><br><br><br><br></p>
+        
+        <h2 style="text-align: right; margin-right: 6.5%; color: #ffffff;">HANWOOL의 자랑,<br><span class="rotating-gradient">ORION series</span></h2>
+        <p style="text-align: right; margin-right: 5%;">HANWOOL은 앞서 언급한 기술을 집약하여 ORION 모델 로켓을 개발하고 있으며<br>이 로켓은 Avionics와 혁신적인 PCB 설계를 통해 안정적인 비행 성능을 제공할수 있습니다.<br><br>HANWOOL의 목표는 단순한 모델 로켓을 넘어서,<br>교육 및 연구의 <span style="color: #e60064;">기초</span>가 되는 혁신적인 비행 플랫폼을 만드는 것입니다.<br>우리는 ORION 모델 로켓을 통해 항공 우주 분야에서의 지속적인 발전과 혁신을 추구하고 있으며,<br>모든 비행이 안전하고 성공적으로 이루어질 수 있도록 최선을 다하고 있습니다.<br><br><br></p>
+        <h2 style="text-align:center" class="section-title blur-effect">
+            <span style="color: #ffffff"><br>이 모든것을,</span><br>무료로
+        </h2>
+        <img src="https://github.com/user-attachments/assets/a427e2ef-a8a8-4502-b757-d4f2b69aeed5" alt="무료 제공" style="max-width: 300px; display: block; margin: 0 auto;">
+        <p style="text-align:center"><br>프로그램, geber, 3d file, 풍부한 자료<br>지금 바로 <span style="color: #01e188;">HANWOOL</span>에서 무료로 이용하세요!<br><br>*FCP 조립 완성본 구매 문의는 아래에서 문의주세요 <br><br><br><br><br></p>
+    </section>
+    
+
+
+    <br>
+
+    <section id="features" class="features">
+        <div class="feature">
+            <h1 style="text-align:left">ORION v1 </h1>
+            <br>    
+            <p style="text-align:left" >내용 입력-------------------------------------</p>
+            <br>
+        </div>
+        <div class="feature">
+            <h1 style="text-align:left">ORION v1 flash</h1>
+            <br>    
+            <p style="text-align:left" >내용 입력-------------------------------------</p>
+            <br>
+        </div>
+    </section>
+
+    <a id="check-meal" class="cta-button" style="display: none;">급식 확인</a>
+
+    <section id="download" class="contact">
+        <h2>🔗</h2>
+        <h2>다운로드 센터</h2>
+        <br>
+        <a class="cta-button open-modal" data-modal="email-modal">바로가기</a>
+    </section>
+
+    <br>
+
+    <!-- 문의 섹션 -->
+    <section id="contact" class="contact">
+        <h2>🤔</h2>
+        <h2>문의</h2>
+        <br>
+        <a class="cta-button open-modal" data-modal="email-modal">문의하기</a>
+    </section>
+
+    <br>
+
+    <!-- 이메일 모달 -->
+    <div id="email-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="email-modal">&times;</span>
+            <h2>📬 연락</h2>
+            <p>email : ybb1833@naver.com</p>
+            <p>1학년실 황규호(정보)선생님에게 문의하세요.</p>
+            <!--상황에 맞춰서 수정 가능-->
+        </div>
+    </div>
+
+    <!-- 개인정보 처리 방침 모달 -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="privacy-modal">&times;</span>
+            <h2>🌏이용약관</h2>
+            <div id="privacy-content">
+                <p>Deogle은(는) 사용자의 개인정보 보호를 중요시하며, 개인정보 보호를 위해 최선을 다하고 있습니다. 본 개인정보 처리방침은 Deogle 커뮤니티 사이트(이하 "사이트")에서 개인정보를 어떻게 수집하고, 사용하는지, 그리고 ChatGPT API를 이용하여 사용자 데이터를 어떻게 처리하는지에 대한 내용을 설명합니다.</p>
+            </div>
+            <button id="next-button" class="cta-button">➜</button>
+        </div>
+    </div>
+    
+    <!-- 이용 약관 모달 -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" data-modal="terms-modal">&times;</span>
+            <h2>이용 약관</h2>
+            <p>여기에 이용 약관 내용을 입력하세요.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; HANWOOL All Rights Reserved</p>
+        <p><a href="#" class="open-modal" data-modal="privacy-modal">이용약관</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const heroSection = document.getElementById('hero');
+            const heroHeight = heroSection.offsetHeight;
+
+            if (window.scrollY > heroHeight) {
+                document.body.style.background = '#151515'; // 랜딩 페이지를 지나면 배경 색상 변경
+            } else {
+                document.body.style.background = 'url("https://github.com/user-attachments/assets/9b66df89-fa97-4d21-9bd4-2df0698937f1") no-repeat center center fixed';
+                document.body.style.backgroundSize = 'cover'; // 랜딩 페이지 배경 이미지
+            }
+        });
+        // 햄버거 메뉴 클릭 이벤트
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    
+        // 스크롤 이동을 위한 함수
+        function scrollToMealInfo() {
+            const mealInfoSection = document.getElementById('meal-info');
+            if (mealInfoSection) {
+                mealInfoSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    
+        // 버튼 클릭 이벤트 리스너
+        document.getElementById('check-meal').addEventListener('click', scrollToMealInfo);
+    
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 모달 창 열고 닫기 함수
+        function toggleModal(modalId, action) {
+            const modal = document.getElementById(modalId);
+            if (action === 'open') {
+                modal.style.display = 'flex';
+            } else if (action === 'close') {
+                modal.style.display = 'none';
+            }
+        }
+
+        // 모달 열기 이벤트
+        document.querySelectorAll('.open-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                toggleModal(modalId, 'open');
+            });
+        });
+
+        // 모달 닫기 이벤트
+        document.querySelectorAll('.modal-close').forEach(span => {
+            span.addEventListener('click', () => {
+                const modalId = span.getAttribute('data-modal');
+                toggleModal(modalId, 'close');
+            });
+        });
+
+        // 모달 외부 클릭 시 닫기 이벤트
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none'; // 모달 숨기기
+            }
+        });
+    
+        // 개인정보 처리방침 내용 배열
+        const privacyContents = [
+                `<p>1. 개인정보 수집</p>
+                <p>Deogle은(는) 사용자의 개인정보를 직접 수집하지 않습니다. 하지만, 사용자가 사이트 내에서 ChatGPT API를 통해 상호작용할 때, OpenAI의 서버를 통해 데이터가 처리됩니다.</p>`,
+                
+                `<p>2. 수집하지 않는 개인정보의 종류</p>
+                <p>개인 식별 정보: 이름, 이메일 주소, 전화번호 등</p>
+                <p>기타 개인정보: 사용자 계정 정보, 로그인 정보, 사용자의 활동 기록 등</p>`,
+                
+                `<p>3. 개인정보의 사용 목적</p>
+                <p>본 사이트는 개인정보를 수집하지 않으며, ChatGPT API를 통해 제공된 데이터는 다음과 같은 목적에 사용됩니다:</p>
+                <ul>
+                    <li>사용자 질문에 대한 적절한 답변 제공</li>
+                    <li>커뮤니티 기능 및 지원 제공</li>
+                </ul>`,
+                
+                `<p>4. 개인정보의 보관 및 처리</p>
+                <p>Deogle은(는) 사용자의 개인정보를 보관하지 않으며, OpenAI의 서버를 통해 일시적으로 처리되는 데이터는 일회성으로 사용됩니다.</p>`,
+                
+                `<p>6. 개인정보 보호를 위한 노력</p>
+                <p>Deogle은(는) 개인정보 보호를 위해 다양한 보안 조치를 시행하고 있으며, 사용자의 데이터를 안전하게 보호하기 위해 최선을 다하고 있습니다.</p>`
+            ];
+    
+        // 현재 표시된 내용의 인덱스
+        let currentContentIndex = 0;
+    
+        document.getElementById('next-button').addEventListener('click', function() {
+            currentContentIndex++;
+            if (currentContentIndex < privacyContents.length) {
+                document.getElementById('privacy-content').innerHTML = privacyContents[currentContentIndex];
+            } else {
+                document.getElementById('next-button').style.display = 'none';
+            }
+        });
+    
+        // 스크롤 이벤트 리스너
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const scrollPosition = window.scrollY;
+    
+            // 스크롤 위치에 따라 헤더 스타일 변경
+            if (scrollPosition > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+    
+            // 현재 스크롤 위치에 따라 메뉴 활성화
+            document.querySelectorAll('.scroll-link').forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+    
+                if (scrollPosition >= sectionTop - 60 && scrollPosition < sectionTop + sectionHeight - 60) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    
+        // 애니메이션 제어 함수
+        function handleScrollAnimations() {
+            const typingElement = document.querySelector('.typing-animation');
+            const blurElement = document.querySelector('.blur-effect');
+            
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            const handleVisibility = (element) => {
+                if (!element) return; // 요소가 없으면 함수 종료
+                const elementTop = element.getBoundingClientRect().top + window.scrollY;
+                if (scrollPosition > elementTop && window.scrollY < elementTop + element.offsetHeight) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            };
+
+            handleVisibility(typingElement);
+            handleVisibility(blurElement);
+        }
+
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', handleScrollAnimations);
+
+        // 초기 상태 확인을 위해 DOMContentLoaded 이벤트 추가
+        document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+    </script>    
+</body>
+</html>
